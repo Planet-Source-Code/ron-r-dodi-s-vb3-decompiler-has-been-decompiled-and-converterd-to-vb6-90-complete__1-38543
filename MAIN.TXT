@@ -1,0 +1,825 @@
+Attribute VB_Name = "MAIN"
+' main.txt - global definitions
+Global Const gc0006 = "e"
+Global Const gc000A = "Error Situation VB Discompiler"
+Global Const gc000E = "For this program you'll need an upgraded VB Discompiler"
+Global Const gc0012 = "Severe errors may cause the Discompiler to crash"
+Global Const gc0016 = "Internal problems, the code created may be buggy"
+Global Const gc001A = "Do you have the latest edition of VB Discompiler?"
+Global Const gc001E = "Runtime Error in VB Discompiler"
+Global Const gc0022 = "News from VB Discompiler"
+Global Const gc0026 = "You may send this program to DoDi to improve VB Discompiler"
+Global Const gc002A = "Error "
+Global Const gc002E = "This option is available only in the Professional version"
+Global Const gc0032 = "Found unknown data structures!"
+Global Const gc0036 = "Not a Visual Basic program"
+Global Const gc003A = " is not supported"
+Global Const gc003E = "Found an unknown resource!"
+Global Const gc0042 = "Found unknown fixups!"
+Global Const gc0046 = "Error in Discompiler logic!"
+Global Const gc004A = "The program is too big for this version of VB Discompiler"
+Global Const gc004E = "Missing description for "
+Global Const gc0052 = " contains unknown structure!"
+Global Const gc0056 = "Found an unknown token!"
+Global Const gc005A = "Unexpected variable reference!"
+Global Const gc005E = "Found incompatible scopes!"
+Global Const gc0062 = "Found incompatible types"
+Global Const gc0066 = "Found an unknown collection!"
+Global Const gc006A = "An already known problem occured"
+Global Const gc006E = "File not found or wrong version: "
+Global Const gc0072 = "Name too long"
+Global Const gc0076 = "Program without code - abort"
+Global Const gc007A = "Visual Basic not found"
+Global Const gc007E = "File not found"
+Global Const gc0082 = "Cheat!"
+Global Const gc0086 = "Already done"
+Global Const gc008A = "VB Discompiler"
+Global Const gc008E = "Initializing"
+Global Const gc0092 = "Select EXE file"
+Global Const gc0096 = "Scanning forms"
+Global Const gc009A = "Scan finished"
+Global Const gc009E = "Creating project files"
+Global Const gc00A2 = "Creating declarations"
+Global Const gc00A6 = "Now save *.FRM as text, please"
+Global Const gc00AA = "Project created"
+Global Const gc00AE = "Combining forms und code"
+Global Const gc00B2 = "Discompilation finished"
+Global Const gc00B6 = "Open "
+Global Const gc00BA = "Loading "
+Global Const gc00BE = "Scanning "
+Global Const gc00C2 = "Creating "
+Global Const gc00C6 = "Forms"
+Global Const gc00CA = "Modules"
+Global Const gc00CE = "Segments"
+Global Const gc00D2 = "Scopes"
+Global Const gc00D6 = "Types"
+Global Const gc00DA = "Tokens"
+Global Const gc00DE = "Fixups"
+Global Const gc00E2 = "Data"
+Global Const gc00E6 = "local "
+Global Const gc00EA = "global "
+Global Const gc00EE = "Subroutine calls"
+Global Const gc00F2 = "Declarations in "
+Global Const gc00F6 = "Error module offset"
+Global Const gc00FA = "Rename"
+Global Const gc00FE = "Startform not found"
+Global Const gc0102 = "No more errors"
+Global Const gc0106 = "Specify type!"
+Global Const gc010A = "Unknown type"
+Global Const gc010E = "Different modules selected"
+Global Const gc0112 = "Unexpected EXE fixup"
+Global Const gc0116 = "Token uses no variable"
+Global Const gc011A = "Show Variable"
+Global Const gc011E = "Source is not saved in binary format"
+Type T1471
+  M147F As Integer
+  M1488 As Integer
+  M1491 As Integer
+  M1498 As String * 9
+  M14A3 As Integer
+  M14AE As Integer
+End Type
+
+Type T14B8
+  M14C8 As String * 1
+  M14D2 As String * 1
+  M14D7 As Integer
+  M14DF As Integer
+  M14E9 As Integer
+  M14F3 As String * 1
+  M14FC As Integer
+End Type
+
+Type T1583
+  M158E As Integer
+  M159A As Integer
+  M15A6 As Integer
+  M15B1 As Integer
+End Type
+
+Type T15DC
+  M158E As Integer
+  M15E9 As Integer
+  M15F7 As Integer
+  M15FE As Integer
+End Type
+
+Type T162F
+  M163C As Integer
+  M1647 As Integer
+  M164F As Integer
+  M1659 As Integer
+  M1662 As Integer
+  M15F7 As Integer
+End Type
+
+Type T1681
+  M163C As Integer
+  M168B As Integer
+End Type
+
+Type T16A8
+  M16B8 As String * 3
+  M15F7 As String * 1
+  M16C3 As String * 1
+  M16CB As Long
+End Type
+
+Type T16D3
+  M16E2 As Long
+  M16EB As String * 1
+End Type
+
+Type T16F5
+  M15F7 As Integer
+  M1702 As Integer
+  M158E As Integer
+  M170C As Integer
+  M1716 As Integer
+  M1720 As Integer
+  M172B As Integer
+  M1733 As Integer
+  M173B As Integer
+  M1741 As Integer
+  M14FC As Integer
+  M1747 As Integer
+  M1752 As Integer
+  M175B As Integer
+  M1766 As Integer
+  M1772(15 To 17) As Integer
+  M177B As Integer
+  M1785 As Integer
+  M1791 As Integer
+  M179C(21 To 22) As Integer
+  M17A7 As Integer
+  M17B3 As Integer
+  M17BE As Integer
+  M17C8 As Long
+End Type
+
+Type T17D2
+  M15F7 As Integer
+  M1702 As Integer
+  M158E As Integer
+  M170C(3 To 6) As Integer
+  M17DF As Integer
+  M17EA(8 To 12) As Integer
+  M17F0 As Integer
+  M17F9 As Integer
+  M17FF As Integer
+  M180A(16 To 28) As Integer
+  M14F3 As Integer
+  M1811 As Long
+End Type
+
+Global Const gc0432 = "3.51"
+Type T1826
+  M1836 As Integer
+  M1841 As Integer
+  M184A As Integer
+  M1853 As Integer
+  M185D As Integer
+  M1868 As Integer
+  M1873 As Integer
+  M187E As Integer
+  M1888 As Integer
+  M1892 As Integer
+  M189C As Integer
+  M18A6 As Integer
+  M18B0 As Integer
+  M18BA As Integer
+  M18C4(15) As Integer
+  M18CB As Long
+End Type
+
+Type T18D6
+  M1836 As Integer
+  M18E6 As Integer
+  M18F0 As Integer
+  M1902 As Integer
+  M1892 As Long
+  M14F3 As Integer
+  M1914 As Integer
+  M191E As Integer
+  M192A As Integer
+  M189C As Integer
+  M18A6 As Integer
+  M1935 As Integer
+  M193F As Integer
+  M1949 As Integer
+  M1952 As Integer
+  M195B As Integer
+  M1964 As Integer
+  M196D As Integer
+  M1976 As Integer
+  M197E As Integer
+  M1986 As Integer
+  M198E As Long
+  M1997 As Integer
+  M19A3 As Integer
+  M19AC As Integer
+  M19B9 As Integer
+  M19C5 As Integer
+  M19CE As Integer
+  M1772 As Integer
+  M19D7 As Integer
+End Type
+
+Global Const gc05C6 = 23117 ' &H5A4D%
+Global Const gc05C8 = 17742 ' &H454E%
+Type T1A3A
+  M14F3 As String * 1
+  M1A47 As Integer
+End Type
+
+Type T1A4F
+  M14F3 As String * 1
+  M1A5C As Integer
+  M1A65 As String * 1
+  M1A47 As Integer
+End Type
+
+Type T1A88
+  M14F3 As Integer
+  M1A97 As Integer
+  M15FE As Integer
+End Type
+
+Global gv0640() As T1A88
+Global gv0672 As Integer
+Global gv0674() As Integer
+Global gv06A6 As Integer
+Global gv06A8 As Long
+Global gv06AC As Long
+Global gv06B0 As Integer
+Global gv06B2 As Integer
+Type T1AF2
+  M1AFE As String * 1
+  M1B05 As String * 1
+  M15FE As Integer
+  M1B0D As Integer
+  M1B13 As Integer
+End Type
+
+Type T1B19
+  M15FE As Integer
+  M1B23 As Integer
+  M1B05 As Integer
+  M1B0D As Integer
+  M1B13 As Integer
+End Type
+
+Global gv071A() As T1B19
+Global gv074C As Integer
+Type T1B3A
+  M1B49 As Integer
+  M1B53 As Integer
+  M14F3 As Integer
+  M1B5D As Integer
+End Type
+
+Global gv0778() As T1B3A
+Global Const gc07B2 = 256 ' &H100%
+Type T1BC9
+  M1BD4 As String
+  M1BDC As Integer
+End Type
+
+Global gv07D8() As T1BC9
+Global gv080A As Integer
+Global gv080E() As T1BC9
+Global gv0840 As Integer
+Global gv0842() As String
+Global gv0876 As String
+Global gv087A As String
+Global gv087E As String
+Global gv0882 As Integer
+Global gv0884 As Integer
+Global gv0888 As T1826
+Global gv08CA As T18D6
+Global gv090A As Integer
+Global gv090C As Integer
+Global gv090E As Integer
+Global gv0910 As Integer
+Global gv0912
+Global gv0914 As Long
+Global gv0918 As Long
+Global gv091C As Long
+Type T1CC0
+  M1CAA As Long
+  M1CCE As Integer
+  M1CD8 As String
+End Type
+
+Global gv094A() As T1CC0
+Global gv097C As Integer
+Global gv097E As Integer
+Global gv0980() As Integer
+Global gv09B2 As Long
+Global gv09B6 As Integer
+Global gv09B8() As Integer
+Global gv09EA As Long
+Global gv09EE As Integer
+Global gv09F0 As String
+Global gv09F6 As String * 1
+Type T1D46
+  M1D4F As String * 2
+End Type
+
+Global gv0A0C As T1D46
+Type T1D5A
+  M1D63 As Integer
+End Type
+
+Global gv0A20 As T1D5A
+Type T1D6E
+  M1D4F As String * 4
+End Type
+
+Type T1D77
+  M1D80 As Long
+End Type
+
+Type T1D85
+  M1D8E As Integer
+  M1D94 As Integer
+End Type
+
+Global gv0A5E As T1D6E
+Global gv0A64 As T1D77
+Type T1DAC
+  M1DB8 As Variant
+  M1DBD As Integer
+  M1DC5 As Integer
+  M0348 As String * 8
+  M1DCE As String * 10
+  M1DD6 As Integer
+  M1DDE As Integer
+  M1DE5 As Integer
+  M1DEC As Integer
+  M1DF3 As Integer
+  M1DFA As Integer
+End Type
+
+Global gv0ADC As T1DAC
+Global gv0B36 As Integer
+Global gv0B38 As Integer
+Type T1F4C
+  M14D2 As String * 1
+  M1D63 As Integer
+End Type
+
+Global gv0B54 As Long
+Global gv0B58 As Long
+Global gv0B5C As Long
+Global gv0B60
+Global gv0B64 As Long
+Global gv0B68 As Long
+Global gv0B6C As String
+Global gv0B74 As String
+Global gv0B78 As String
+Global gv0B7C As String
+Global gv0B80 As String
+Global gv0B84 As Integer
+Global gv0B86 As Integer
+Global gv0B88 As Integer
+Global Const gc0B8C = 1 ' &H1%
+Global gv0B8E As Integer
+Global Const gc0B92 = 1 ' &H1%
+Global gv0B98 As Integer
+Global gv0B9A As Long
+Global gv0B9E As String
+Type T205E
+  M15F7 As Integer
+  M206B As Integer
+End Type
+
+Global gv0BBC As T205E
+Type T207C
+  M2086 As Integer
+  M14D2 As String * 1
+  M208E As String * 1
+End Type
+
+Type T2095
+  M20A0 As String
+  M20A7 As String
+End Type
+
+Global gv0C0A As T2095
+Global gv0C12 As Integer
+Global gv0C16 As Control
+Global gv0C1A As String
+Global gv0C1E As Integer
+Type T20DB
+  M15F7 As Integer
+  M20E4 As Integer
+  M1772 As Long
+End Type
+
+Type T20EB
+  M15F7 As Integer
+  M20E4 As Integer
+  M20F6 As Integer
+  M1BD4 As String
+End Type
+
+Global gv0C90() As T20EB
+Global gv0CC2 As Integer
+Global gv0CC4(16) As String
+Type T21ED
+  M15FE As Integer
+  M21F6 As Integer
+  M14F3 As Integer
+  M21FD As Integer
+  M1772 As Long
+End Type
+
+Type T2203
+  M15F7 As Integer
+  M21F6 As Integer
+  M14F3 As Integer
+  M21FD As Integer
+  M15FE As Integer
+  M1BD4 As String
+End Type
+
+Global gv0D4C() As T2203
+Global gv0D7E As Integer
+Global gv0D80 As Integer
+Global gv0D82 As Integer
+Global gv0D86 As T2203
+Global gv0D94 As Integer
+Global gv0D9A As Long
+Global gv0D9E As Long
+Global gv0DA2 As Integer
+Global gv0DA4 As Integer
+Global gv0DA6() As Integer
+Global Const gc0DD8 = 1 ' &H1%
+Global Const gc0DDA = 2 ' &H2%
+Global Const gc0DDC = 3 ' &H3%
+Global Const gc0DE0 = 1 ' &H1%
+Global Const gc0DE2 = 6 ' &H6%
+Global Const gc0DE4 = 1 ' &H1%
+Global Const gc0DE6 = 2 ' &H2%
+Global Const gc0DE8 = 3 ' &H3%
+Global Const gc0DEA = 5 ' &H5%
+Global Const gc0DEC = 6 ' &H6%
+Type T2300
+  M230D As Integer
+  M158E As Integer
+  M2315 As Integer
+  M231F As Integer
+  M14DF As Integer
+  M14D7 As Integer
+  M2329 As Long
+End Type
+
+Type T2334
+  M2341 As Integer
+  M230D As Integer
+  M15FE As Integer
+  M1A97 As Integer
+  M158E As Integer
+  M2348 As Integer
+  M2351 As Integer
+  M235A As Integer
+  M1B23 As String
+  M2364 As Integer
+  M236D As Integer
+  M2378 As String
+End Type
+
+Global gv0EA2(7) As Integer
+Type T2383
+  M15F7 As Integer
+  M14D7 As Integer
+  M14DF As Integer
+  M14E9 As Integer
+  M14F3 As String * 1
+  M14FC As Integer
+  M238D As Integer
+  M2396 As Integer
+End Type
+
+Global gv0F02(256) As String
+Global gv0F1A(256) As T2383
+Global gv0F30 As Integer
+Global gv0F32 As Integer
+Global gv0F34 As Integer
+Global gv0F36 As String
+Global gv0F3A As String
+Global gv0F3E As String
+Global gv0F42 As Integer
+Global gv0F44 As Integer
+Global gv0F46 As Integer
+Global gv0F48 As Integer
+Type T2418
+  M2427 As Integer
+  M2431 As Integer
+  M243B As Integer
+  M1BD4 As String
+End Type
+
+Global gv0F7C(255) As T2418
+Global gv0F92 As Integer
+Type T245E
+  M2427 As Integer
+  M1BD4 As String
+End Type
+
+Global gv0FB6() As T245E
+Global gv0FE8 As Integer
+Type T2488
+  M2496 As Integer
+  M249D As Integer
+End Type
+
+Global gv1002() As Integer
+Global gv1036() As T2488
+Type T24BE
+  M1CAA As Long
+  M24CD As Integer
+  M24D3 As Integer
+  M24D9 As Integer
+  M24DF As Integer
+  M24E5 As Integer
+  M24EB As String
+  M24F1 As Integer
+  M24F7 As String
+  M24FD As Integer
+End Type
+
+Global gv10CE(256) As T24BE
+Global gv10E4 As Integer
+Global gv10E6
+Global Const gc10EA = 2 ' &H2%
+Global gv10EC As Integer
+Global Const gc10EE = "?pmlgcfOTas"
+Global Const gc10F2 = 1 ' &H1%
+Global Const gc10F4 = 2 ' &H2%
+Global Const gc10F6 = 3 ' &H3%
+Global Const gc10F8 = 4 ' &H4%
+Global Const gc10FA = 5 ' &H5%
+Global Const gc10FC = 6 ' &H6%
+Global Const gc10FE = 7 ' &H7%
+Global Const gc1102 = 9 ' &H9%
+Global Const gc1108 = "~.[asf14|c"
+Global Const gc110C = 1 ' &H1%
+Global Const gc110E = 2 ' &H2%
+Global Const gc1110 = 3 ' &H3%
+Global Const gc1112 = 4 ' &H4%
+Global Const gc1114 = 5 ' &H5%
+Global Const gc1116 = 6 ' &H6%
+Global Const gc1118 = 7 ' &H7%
+Global Const gc111A = 8 ' &H8%
+Global Const gc111C = 9 ' &H9%
+Global Const gc111E = 10 ' &HA%
+Global Const gc1120 = "t%&!#@vOT*A$4|"
+Global Const gc1124 = "t%&!#@vOT*A$4|"
+Global Const gc1128 = "t%&!#@vOT*A$4|1"
+Global Const gc112C = "t%&!#@vOT*A$4|1U"
+Global Const gc1130 = 1 ' &H1%
+Global Const gc1132 = 2 ' &H2%
+Global Const gc1134 = 3 ' &H3%
+Global Const gc1136 = 4 ' &H4%
+Global Const gc1138 = 5 ' &H5%
+Global Const gc113C = 7 ' &H7%
+Global Const gc113E = 8 ' &H8%
+Global Const gc1140 = 9 ' &H9%
+Global Const gc1144 = 11 ' &HB%
+Global Const gc1146 = 12 ' &HC%
+Global Const gc1148 = 13 ' &HD%
+Global Const gc114A = 14 ' &HE%
+Global Const gc114C = 15 ' &HF%
+Global Const gc114E = 16 ' &H10%
+Global gv1150(31) As Long
+Global Const gc1168 = 128 ' &H80%
+Global Const gc116A = 64 ' &H40%
+Global Const gc116C = 32 ' &H20%
+Global Const gc116E = 16 ' &H10%
+Global Const gc1174 = 15 ' &HF%
+Global Const gc1176 = 31 ' &H1F%
+Global Const gc117A = 128 ' &H80%
+Global Const gc117E = 17 ' &H11%
+Global gv1180(15) As Integer
+Global gv1196(15) As Integer
+Global Const gc11AC = "std_p_e.300"
+Type T27B1
+  M1C50 As Integer
+  M14F3 As Long
+  M27BF As Long
+  M27CA As Integer
+  M27D8 As Long
+  M27E4 As Integer
+  M27F4 As Integer
+  M27FF As Integer
+  M280D As Integer
+  M281A As Integer
+  M2829 As Integer
+  M2832 As Integer
+  M283C As String * 1
+  M2847 As String * 1
+  M2853 As String * 1
+  M2860 As Integer
+End Type
+
+Global Const gc123E = 256 ' &H100%
+Global Const gc1240 = 31 ' &H1F%
+Global Const gc125E = 32 ' &H20%
+Global gv1260(32) As String
+Global gv1276(8) As String
+Type T2952
+  M1BD4 As Integer
+  M14F3 As Long
+  M2961 As String * 1
+  M296A As String * 1
+  M2976 As Long
+  M2985 As Integer
+  M2991 As Integer
+End Type
+
+Type T299C
+  M1BD4 As Integer
+  M29AC As Integer
+  M29B5 As Integer
+  M29C2 As Integer
+  M29CF As Integer
+  M14F3 As Long
+End Type
+
+Type T29DB
+  M21FD As Integer
+  M1C50 As Integer
+  M2860 As Integer
+  M14F3 As Long
+  M280D As String
+  M29E6 As String
+  M281A As String
+  M29F5 As Integer
+  M29FE As Integer
+  M283C As Integer
+  M2A09 As Integer
+  M2A14 As Integer
+  M2A1E As Integer
+  M2847 As Integer
+End Type
+
+Global gv1390() As T29DB
+Global gv13C2 As Integer
+Type T2A35
+  M15F7 As Integer
+  M1BD4 As String
+End Type
+
+Global gv13E6() As T2A35
+Global gv1418 As Integer
+Global gv141A() As Integer
+Global gv144C As Integer
+Type T2A60
+  M1BD4 As String
+  M2A6D As String
+  M1B23 As String
+End Type
+
+Global gv147E() As T2A60
+Global gv14B0 As Integer
+Global gv14B2() As Integer
+Global gv14E4 As Integer
+Type T2A90
+  M15F7 As Integer
+  M1BDC As Integer
+  M1BD4 As String
+End Type
+
+Global Const gc150E = "vbdis3i.dat"
+Global Const gc1512 = "x.dat"
+Global Const gc1518 = 10837 ' &H2A55%
+Global Const gc151A = "%&!#@?$"
+Global Const gc151E = ""
+Global gv1522(1 To 7) As String
+Global gv1538(1 To 8) As String
+Type T2AFF
+  M2B0C As Integer
+  M2B14 As Integer
+  M2B1C As Integer
+  M2B24 As Integer
+  M2B2C As Integer
+End Type
+
+Global gv157E
+Global gv1584 As T2AFF
+Global gv158E As Integer
+Type T2B49
+  M2B56 As Integer
+  M2B5C As Integer
+  M2B1C As Integer
+End Type
+
+Type T2B63
+  M2B71(511) As T2B49
+  M2B76(96) As Integer
+End Type
+
+Global gv15EA As T2B63
+Type T2D4B
+  M2D5A As Integer
+  M1B05 As Integer
+  M2D61 As Integer
+  M2D6A As Integer
+End Type
+
+Global gv231E As T2D4B
+Global gv2326 As Integer
+Type T2D9E
+  M24DF(10837) As Integer
+End Type
+
+Global gv234E As T2D9E
+Global gv77FA As String
+Global gv781A As Integer
+Global gv781C() As String
+Global gv784E() As Integer
+Global gv7880 As String
+Global gv7884 As String
+Global gv7888() As String
+Global Const gc78BA = -1 ' &HFFFF%
+Global Const gc78BC = -2 ' &HFFFE%
+Global Const gc78C0 = 224 ' &HE0%
+Global gv78C2 As Integer
+Global Const gc78C4 = 8 ' &H8%
+Global Const gc78C6 = 8 ' &H8%
+Global Const gc78C8 = 9 ' &H9%
+Global Const gc78CA = 10 ' &HA%
+Global Const gc78CC = 11 ' &HB%
+Global Const gc78CE = 16 ' &H10%
+Global Const gc78D0 = 16 ' &H10%
+Global Const gc78D2 = 17 ' &H11%
+Global Const gc78D6 = 32 ' &H20%
+Global Const gc78D8 = 64 ' &H40%
+Global Const gc78DC = 96 ' &H60%
+Global Const gc78DE = 128 ' &H80%
+Global Const gc78E0 = 160 ' &HA0%
+Global Const gc78E2 = 160 ' &HA0%
+Global Const gc78E4 = 192 ' &HC0%
+Global Const gc78E6 = 224 ' &HE0%
+Global Const gc78EC = 3 ' &H3%
+Global Const gc790A = 225 ' &HE1%
+Global Const gc790C = 128 ' &H80%
+Global Const gc790E = 226 ' &HE2%
+Global Const gc7914 = 233 ' &HE9%
+Global Const gc7918 = 32 ' &H20%
+Global Const gc791A = 227 ' &HE3%
+Global gv791C As Integer
+Global Const gc791E = 1 ' &H1%
+Global Const gc7920 = 2 ' &H2%
+Global Const gc7922 = 4 ' &H4%
+Global Const gc7924 = 8 ' &H8%
+Global Const gc7926 = 16 ' &H10%
+Global Const gc7928 = 32 ' &H20%
+Global gv792A As Integer
+Global gv7970() As T2300
+Global gv79A2 As Integer
+Global gv79A6 As T2300
+Global gv79B6 As Integer
+Global gv79B8 As Integer
+Global gv79BC() As T2334
+Global gv79EE As Integer
+Global gv79F2 As T16F5
+Global gv7A2A As Integer
+Global gv7A2C As Integer
+Global gv7A2E As Integer
+Global gv7A30 As Integer
+Global gv7A32 As Integer
+Global gv7A34 As Integer
+Global gv7A36 As Long
+Global gv7A48 As Integer
+Global gv7A4A As String
+Global Const gc7A4E = 1 ' &H1%
+Global Const gc7A50 = 2 ' &H2%
+Global Const gc7A52 = 4 ' &H4%
+Global Const gc7A54 = 8 ' &H8%
+Global Const gc7A56 = 16 ' &H10%
+Global Const gc7A58 = 32 ' &H20%
+Global Const gc7A5A = 64 ' &H40%
+Global Const gc7A5C = 128 ' &H80%
+Global Const gc7A5E = 256 ' &H100%
+Global Const gc7A60 = 512 ' &H200%
+Global Const gc7A62 = 1024 ' &H400%
+Global Const gc7A64 = 2048 ' &H800%
+Global Const gc7A66 = 4096 ' &H1000%
+Global Const gc7A68 = 8192 ' &H2000%
+Global Const gc7A6A = 16384 ' &H4000%
+Global Const gc7A6C = -32768 ' &H8000%
+Global Const gc7A7A = 1 ' &H1%
+Global Const gc7A7C = 2 ' &H2%
+Global Const gc7A7E = 4 ' &H4%
+Global Const gc7A80 = 8 ' &H8%
+Global Const gc7A82 = 16 ' &H10%
+Global gv7A84
+Global gv7A88 As String
+Global gv7A8C As String
+Global gv7A90 As String
+Global gv7A94(64) As String
+Global gv7AAA As Integer
+
